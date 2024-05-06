@@ -1,22 +1,26 @@
 "use client"
-import React,{ useState } from 'react';
-function CounterApp(){ 
- const[value,setvalue]=useState(0)
-  let handleIncrement=()=>{ 
-    setvalue(value+1); 
+import React, { useState } from "react";
 
-  }
-  let handledecrement=()=>{ 
-    setvalue(value-1); 
-  }
-  return ( 
-    <div className="flex justify-center gap-3  items-center h-screen"><div><h1 className="font-bold text-2xl  ">Counter App</h1></div>
-    
-      <button className="bg-fuchsia-600 rounded-xl p-5" onClick={handleIncrement} > Increament</button>
-      
-      {value}
-      <button className="bg-pink-600 rounded-xl p-5" onClick={handledecrement}>Decrement</button>
-   </div>
+function HomePage(){
+  const[value,setValue]=useState(0)
+  function Increment(){ 
+    setValue(value+1)
+  } 
+  function Decrement(){ 
+    setValue(value-1)
+  } 
+
+  return( 
+    <div> 
+     
+      <h1 className="text-bold text-4xl flex justify-center py-12 ">Counter App </h1>
+     <div className="flex justify-center  items-center gap-3 ">
+      <button  className="bg-red-500 rounded-lg p-4 " onClick={Increment}>Increment</button>
+      <div>{value}</div> 
+      <button  className="bg-blue-500 rounded-lg p-4" onClick={Decrement} >Decrement</button>
+      </div>
+
+    </div>
   )
 }
-export default CounterApp;
+export default HomePage;
